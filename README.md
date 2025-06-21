@@ -2,6 +2,8 @@
 
 A minimal, function-based CI/CD failure analysis system with Graph-RAG pipeline that intelligently analyzes build failures using knowledge graphs and vector embeddings.
 
+![Devo Architecture](frontend/img.png)
+
 ## 🚀 Features
 
 - **Graph-RAG Pipeline**: Combines knowledge graphs with vector similarity search
