@@ -1,0 +1,76 @@
+{
+  "run_id": 100006,
+  "query": "memory out of space",
+  "context": {
+    "target_run": 100006,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_965980",
+        "similarity": 0.3794517913826094,
+        "metadata": {
+          "run_id": 965980,
+          "repo": "global-engine-644",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "unit-tests",
+          "commit": "7e955f5",
+          "timestamp": "2024-10-07T20:10:50.657468",
+          "error_patterns": [
+            {
+              "keyword": "security",
+              "line": "Mobile responsive layout broken at",
+              "context": "Mobile responsive layout broken at lib/utils/helper31.php:634:31"
+            }
+          ],
+          "raw_logs": "Starting unit-tests workflow for global-engine-644\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Mobile responsive layout broken at lib/utils/helper31.php:634:31\nStack trace:\n  at build (/path/to/global-engine-644/build.js:123:45)\n  at main (/path/to/global-engine-644/main.js:67:89)\nCleaning up...\nWorkflow unit-tests completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_143988",
+        "similarity": 0.37438103078766016,
+        "metadata": {
+          "run_id": 143988,
+          "repo": "systems-backend-868",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "vulnerability-scan",
+          "commit": "46f7e9e",
+          "timestamp": "2025-02-20T20:10:50.455651",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "CDN cache miss rate high",
+              "context": "CDN cache miss rate high in function 'handle_auth'"
+            }
+          ],
+          "raw_logs": "Starting vulnerability-scan workflow for systems-backend-868\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: CDN cache miss rate high in function 'handle_auth'\nStack trace:\n  at build (/path/to/systems-backend-868/build.js:123:45)\n  at main (/path/to/systems-backend-868/main.js:67:89)\nCleaning up...\nWorkflow vulnerability-scan completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_430389",
+        "similarity": 0.37175235211838625,
+        "metadata": {
+          "run_id": 430389,
+          "repo": "systems-web-978",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "unit-tests",
+          "commit": "3c5484f",
+          "timestamp": "2024-11-27T20:10:50.755268",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "ReferenceError: window is not defined",
+              "context": "ReferenceError: window is not defined Exit code: 126"
+            }
+          ],
+          "raw_logs": "Starting unit-tests workflow for systems-web-978\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: ReferenceError: window is not defined Exit code: 126\nStack trace:\n  at build (/path/to/systems-web-978/build.js:123:45)\n  at main (/path/to/systems-web-978/main.js:67:89)\nCleaning up...\nWorkflow unit-tests completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a memory out of space related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

@@ -1,0 +1,88 @@
+{
+  "run_id": 12345,
+  "query": "npm build error",
+  "context": {
+    "target_run": 12345,
+    "graph_similar": [
+      [
+        "run_12346",
+        1
+      ]
+    ],
+    "vector_similar": [
+      {
+        "doc_id": "run_12346",
+        "similarity": 0.25766316630899005,
+        "metadata": {
+          "run_id": 12346,
+          "repo": "test/repo1",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "CI",
+          "commit": "def456",
+          "error_patterns": [
+            {
+              "keyword": "error",
+              "line": "TypeError: Cannot read property",
+              "context": "Runtime error"
+            },
+            {
+              "keyword": "failed",
+              "line": "Build process failed",
+              "context": "Build stage"
+            }
+          ],
+          "raw_logs": "Building...\nTypeError: Cannot read property\nBuild process failed"
+        }
+      },
+      {
+        "doc_id": "run_12345",
+        "similarity": 0.2420914408466056,
+        "metadata": {
+          "run_id": 12345,
+          "repo": "test/repo1",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "CI",
+          "commit": "abc123",
+          "error_patterns": [
+            {
+              "keyword": "npm err",
+              "line": "npm ERR! code ELIFECYCLE",
+              "context": "Build failed"
+            },
+            {
+              "keyword": "failed",
+              "line": "Tests failed with 3 errors",
+              "context": "Test execution"
+            }
+          ],
+          "raw_logs": "npm install\nnpm ERR! code ELIFECYCLE\nTests failed"
+        }
+      }
+    ],
+    "failure_path": [
+      {
+        "type": "workflow",
+        "name": "CI"
+      },
+      {
+        "type": "run",
+        "status": "completed",
+        "conclusion": "failure"
+      },
+      {
+        "type": "error",
+        "keyword": "npm err",
+        "context": "Build failed"
+      },
+      {
+        "type": "error",
+        "keyword": "failed",
+        "context": "Test execution"
+      }
+    ]
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a npm build error related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

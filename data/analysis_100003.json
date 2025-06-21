@@ -1,0 +1,76 @@
+{
+  "run_id": 100003,
+  "query": "kubernetes configuration issue",
+  "context": {
+    "target_run": 100003,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_745930",
+        "similarity": 0.42027034420028575,
+        "metadata": {
+          "run_id": 745930,
+          "repo": "systems-core-567",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "cd",
+          "commit": "cec9b77",
+          "timestamp": "2024-12-08T20:10:49.821317",
+          "error_patterns": [
+            {
+              "keyword": "build",
+              "line": "CPU usage threshold exceeded in",
+              "context": "CPU usage threshold exceeded in function 'handle_request'"
+            }
+          ],
+          "raw_logs": "Starting cd workflow for systems-core-567\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: CPU usage threshold exceeded in function 'handle_request'\nStack trace:\n  at build (/path/to/systems-core-567/build.js:123:45)\n  at main (/path/to/systems-core-567/main.js:67:89)\nCleaning up...\nWorkflow cd completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_238325",
+        "similarity": 0.41992732336332567,
+        "metadata": {
+          "run_id": 238325,
+          "repo": "secure-service-610",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "smoke-tests",
+          "commit": "1291380",
+          "timestamp": "2025-04-25T20:10:50.831295",
+          "error_patterns": [
+            {
+              "keyword": "deploy",
+              "line": "GraphQL query syntax error Exit",
+              "context": "GraphQL query syntax error Exit code: 137"
+            }
+          ],
+          "raw_logs": "Starting smoke-tests workflow for secure-service-610\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: GraphQL query syntax error Exit code: 137\nStack trace:\n  at build (/path/to/secure-service-610/build.js:123:45)\n  at main (/path/to/secure-service-610/main.js:67:89)\nCleaning up...\nWorkflow smoke-tests completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_682420",
+        "similarity": 0.4138399352499306,
+        "metadata": {
+          "run_id": 682420,
+          "repo": "corp-frontend-330",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "backup",
+          "commit": "b66c108",
+          "timestamp": "2024-07-12T20:10:49.761533",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "Compliance audit failure at lib/utils/helper22.ts:246:69",
+              "context": "Compliance audit failure at lib/utils/helper22.ts:246:69"
+            }
+          ],
+          "raw_logs": "Starting backup workflow for corp-frontend-330\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Compliance audit failure at lib/utils/helper22.ts:246:69\nStack trace:\n  at build (/path/to/corp-frontend-330/build.js:123:45)\n  at main (/path/to/corp-frontend-330/main.js:67:89)\nCleaning up...\nWorkflow backup completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a kubernetes configuration issue related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

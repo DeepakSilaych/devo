@@ -1,0 +1,76 @@
+{
+  "run_id": 100008,
+  "query": "compilation syntax error",
+  "context": {
+    "target_run": 100008,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_800000",
+        "similarity": 0.550439844478401,
+        "metadata": {
+          "run_id": 800000,
+          "repo": "data-utils-175",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "dependency-check",
+          "commit": "338efa5",
+          "timestamp": "2024-07-12T20:10:50.337084",
+          "error_patterns": [
+            {
+              "keyword": "deploy",
+              "line": "Log rotation error at src/components/Component34.js:814:93",
+              "context": "Log rotation error at src/components/Component34.js:814:93"
+            }
+          ],
+          "raw_logs": "Starting dependency-check workflow for data-utils-175\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Log rotation error at src/components/Component34.js:814:93\nStack trace:\n  at build (/path/to/data-utils-175/build.js:123:45)\n  at main (/path/to/data-utils-175/main.js:67:89)\nCleaning up...\nWorkflow dependency-check completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_648269",
+        "similarity": 0.5501505437810829,
+        "metadata": {
+          "run_id": 648269,
+          "repo": "cloud-utils-482",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "vulnerability-scan",
+          "commit": "5078fd0",
+          "timestamp": "2024-07-01T20:10:50.697203",
+          "error_patterns": [
+            {
+              "keyword": "integration",
+              "line": "npm ERR! code ELIFECYCLE while",
+              "context": "npm ERR! code ELIFECYCLE while processing database query"
+            }
+          ],
+          "raw_logs": "Starting vulnerability-scan workflow for cloud-utils-482\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: npm ERR! code ELIFECYCLE while processing database query\nStack trace:\n  at build (/path/to/cloud-utils-482/build.js:123:45)\n  at main (/path/to/cloud-utils-482/main.js:67:89)\nCleaning up...\nWorkflow vulnerability-scan completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_640739",
+        "similarity": 0.5487687124383261,
+        "metadata": {
+          "run_id": 640739,
+          "repo": "dev-engine-523",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "load-test",
+          "commit": "b14f8ab",
+          "timestamp": "2025-06-13T20:10:49.918939",
+          "error_patterns": [
+            {
+              "keyword": "test",
+              "line": "Public key infrastructure error Exit",
+              "context": "Public key infrastructure error Exit code: 139"
+            }
+          ],
+          "raw_logs": "Starting load-test workflow for dev-engine-523\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Public key infrastructure error Exit code: 139\nStack trace:\n  at build (/path/to/dev-engine-523/build.js:123:45)\n  at main (/path/to/dev-engine-523/main.js:67:89)\nCleaning up...\nWorkflow load-test completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a compilation syntax error related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

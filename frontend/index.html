@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devo - CI/CD Failure Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-chart-line"></i> Devo CI/CD Analysis</h1>
+            <p>Intelligent failure analysis with Graph-RAG pipeline</p>
+        </header>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="stat-content">
+                    <h3 id="totalFailures">-</h3>
+                    <p>Total Failures</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="stat-content">
+                    <h3 id="graphNodes">-</h3>
+                    <p>Graph Nodes</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                <div class="stat-content">
+                    <h3 id="repositories">-</h3>
+                    <p>Repositories</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-cogs"></i></div>
+                <div class="stat-content">
+                    <h3 id="workflows">-</h3>
+                    <p>Workflows</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="panel">
+                <h2><i class="fas fa-search"></i> Failure Analysis</h2>
+                <div class="form-group">
+                    <label for="runId">Run ID:</label>
+                    <input type="number" id="runId" placeholder="Enter run ID (e.g., 100000)">
+                </div>
+                <div class="form-group">
+                    <label for="analysisQuery">Query:</label>
+                    <input type="text" id="analysisQuery" placeholder="Describe the failure issue" value="ssl certificate expired">
+                </div>
+                <button onclick="analyzeFailure()" class="btn btn-primary">
+                    <i class="fas fa-microscope"></i> Analyze Failure
+                </button>
+                
+                <div id="analysisResult" class="result-container" style="display: none;">
+                    <h3>Analysis Result</h3>
+                    <div id="analysisContent"></div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2><i class="fas fa-search-plus"></i> Semantic Search</h2>
+                <div class="form-group">
+                    <label for="searchQuery">Search Query:</label>
+                    <input type="text" id="searchQuery" placeholder="Search for similar failures" value="docker build failed">
+                </div>
+                <div class="form-group">
+                    <label for="resultCount">Results:</label>
+                    <select id="resultCount">
+                        <option value="5">5 results</option>
+                        <option value="10">10 results</option>
+                        <option value="20">20 results</option>
+                    </select>
+                </div>
+                <button onclick="searchFailures()" class="btn btn-secondary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                
+                <div id="searchResult" class="result-container" style="display: none;">
+                    <h3>Search Results</h3>
+                    <div id="searchContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2><i class="fas fa-tachometer-alt"></i> System Status</h2>
+            <div class="system-metrics">
+                <div class="metric">
+                    <label>CPU Usage:</label>
+                    <div class="progress-bar">
+                        <div id="cpuProgress" class="progress-fill"></div>
+                    </div>
+                    <span id="cpuText">-</span>
+                </div>
+                <div class="metric">
+                    <label>Memory Usage:</label>
+                    <div class="progress-bar">
+                        <div id="memoryProgress" class="progress-fill"></div>
+                    </div>
+                    <span id="memoryText">-</span>
+                </div>
+                <div class="metric">
+                    <label>API Status:</label>
+                    <span id="apiStatus" class="status-indicator">Checking...</span>
+                </div>
+            </div>
+            <button onclick="refreshSystemStatus()" class="btn btn-outline">
+                <i class="fas fa-sync-alt"></i> Refresh Status
+            </button>
+        </div>
+
+        <div class="panel">
+            <h2><i class="fas fa-tools"></i> System Actions</h2>
+            <div class="action-buttons">
+                <button onclick="rebuildGraph()" class="btn btn-warning">
+                    <i class="fas fa-hammer"></i> Rebuild Knowledge Graph
+                </button>
+                <button onclick="exportData()" class="btn btn-info">
+                    <i class="fas fa-download"></i> Export Analysis Data
+                </button>
+                <button onclick="clearCache()" class="btn btn-outline">
+                    <i class="fas fa-trash"></i> Clear Cache
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

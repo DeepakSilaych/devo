@@ -1,0 +1,67 @@
+name: Devo CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Test pipeline
+      run: |
+        python test_pipeline.py
+    
+    - name: Start API
+      run: |
+        uvicorn main:app --host 0.0.0.0 --port 8000 &
+        sleep 10
+    
+    - name: Test API endpoints
+      run: |
+        curl -f http://localhost:8000/health
+        curl -f http://localhost:8000/stats
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: |
+        docker build -t devo-api .
+    
+    - name: Test Docker container
+      run: |
+        docker run -d -p 8000:8000 --name devo-test devo-api
+        sleep 10
+        curl -f http://localhost:8000/health
+        docker stop devo-test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [test, build]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy notification
+      run: |
+        echo "Deployment would happen here"

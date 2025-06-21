@@ -1,0 +1,104 @@
+{
+  "run_id": 100005,
+  "query": "ssl certificate expired",
+  "context": {
+    "target_run": 100005,
+    "graph_similar": [
+      [
+        "run_463644",
+        1
+      ],
+      [
+        "run_285386",
+        1
+      ],
+      [
+        "run_793241",
+        1
+      ]
+    ],
+    "vector_similar": [
+      {
+        "doc_id": "run_631867",
+        "similarity": 0.8233039361941039,
+        "metadata": {
+          "run_id": 631867,
+          "repo": "systems-mobile-710",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "vulnerability-scan",
+          "commit": "006bea3",
+          "timestamp": "2024-12-26T20:10:49.775207",
+          "error_patterns": [
+            {
+              "keyword": "integration",
+              "line": "gRPC service unavailable in function",
+              "context": "gRPC service unavailable in function 'handle_error'"
+            }
+          ],
+          "raw_logs": "Starting vulnerability-scan workflow for systems-mobile-710\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: gRPC service unavailable in function 'handle_error'\nStack trace:\n  at build (/path/to/systems-mobile-710/build.js:123:45)\n  at main (/path/to/systems-mobile-710/main.js:67:89)\nCleaning up...\nWorkflow vulnerability-scan completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_389046",
+        "similarity": 0.8183859950344315,
+        "metadata": {
+          "run_id": 389046,
+          "repo": "cloud-frontend-894",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "deploy",
+          "commit": "920c81e",
+          "timestamp": "2024-06-21T20:10:50.926697",
+          "error_patterns": [
+            {
+              "keyword": "build",
+              "line": "GitHub Actions workflow failed at",
+              "context": "GitHub Actions workflow failed at lib/utils/helper2.go:396:66"
+            }
+          ],
+          "raw_logs": "Starting deploy workflow for cloud-frontend-894\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: GitHub Actions workflow failed at lib/utils/helper2.go:396:66\nStack trace:\n  at build (/path/to/cloud-frontend-894/build.js:123:45)\n  at main (/path/to/cloud-frontend-894/main.js:67:89)\nCleaning up...\nWorkflow deploy completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_462906",
+        "similarity": 0.8149833488657832,
+        "metadata": {
+          "run_id": 462906,
+          "repo": "cloud-backend-5",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "vulnerability-scan",
+          "commit": "72ab7ed",
+          "timestamp": "2024-07-02T20:10:50.147123",
+          "error_patterns": [
+            {
+              "keyword": "build",
+              "line": "Memory leak detected Exit code:",
+              "context": "Memory leak detected Exit code: 143"
+            }
+          ],
+          "raw_logs": "Starting vulnerability-scan workflow for cloud-backend-5\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Memory leak detected Exit code: 143\nStack trace:\n  at build (/path/to/cloud-backend-5/build.js:123:45)\n  at main (/path/to/cloud-backend-5/main.js:67:89)\nCleaning up...\nWorkflow vulnerability-scan completed with errors"
+        }
+      }
+    ],
+    "failure_path": [
+      {
+        "type": "workflow",
+        "name": "lint"
+      },
+      {
+        "type": "run",
+        "status": "completed",
+        "conclusion": "failure"
+      },
+      {
+        "type": "error",
+        "keyword": "performance",
+        "context": "Connection pool depleted while processing API call"
+      }
+    ]
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a ssl certificate expired related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

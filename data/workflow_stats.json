@@ -1,0 +1,16 @@
+{
+  "Azure Deploy": 363,
+  "Kubernetes Deploy": 351,
+  "Docker Build": 385,
+  "Code Quality": 354,
+  "Performance Tests": 348,
+  "Build": 377,
+  "Deploy": 352,
+  "Security Scan": 360,
+  "Test": 332,
+  "E2E Tests": 376,
+  "AWS Deploy": 347,
+  "Release": 329,
+  "CI": 383,
+  "Integration Tests": 343
+}

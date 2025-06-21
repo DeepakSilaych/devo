@@ -1,0 +1,76 @@
+{
+  "run_id": 100009,
+  "query": "authentication token expired",
+  "context": {
+    "target_run": 100009,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_880601",
+        "similarity": 0.5187826610572767,
+        "metadata": {
+          "run_id": 880601,
+          "repo": "dev-platform-300",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "dependency-check",
+          "commit": "5639c4d",
+          "timestamp": "2024-08-18T20:10:50.188733",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "gRPC service unavailable Exit code:",
+              "context": "gRPC service unavailable Exit code: 127"
+            }
+          ],
+          "raw_logs": "Starting dependency-check workflow for dev-platform-300\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: gRPC service unavailable Exit code: 127\nStack trace:\n  at build (/path/to/dev-platform-300/build.js:123:45)\n  at main (/path/to/dev-platform-300/main.js:67:89)\nCleaning up...\nWorkflow dependency-check completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_587522",
+        "similarity": 0.5173531970343552,
+        "metadata": {
+          "run_id": 587522,
+          "repo": "data-frontend-152",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "monitoring",
+          "commit": "e022764",
+          "timestamp": "2025-03-27T20:10:50.107566",
+          "error_patterns": [
+            {
+              "keyword": "deploy",
+              "line": "Grafana dashboard error while processing",
+              "context": "Grafana dashboard error while processing API call"
+            }
+          ],
+          "raw_logs": "Starting monitoring workflow for data-frontend-152\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Grafana dashboard error while processing API call\nStack trace:\n  at build (/path/to/data-frontend-152/build.js:123:45)\n  at main (/path/to/data-frontend-152/main.js:67:89)\nCleaning up...\nWorkflow monitoring completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_745754",
+        "similarity": 0.517152435999832,
+        "metadata": {
+          "run_id": 745754,
+          "repo": "global-frontend-715",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "smoke-tests",
+          "commit": "5916502",
+          "timestamp": "2025-02-25T20:10:50.790385",
+          "error_patterns": [
+            {
+              "keyword": "deploy",
+              "line": "Feature flag evaluation error at",
+              "context": "Feature flag evaluation error at api/routes/route27.ts:58:70"
+            }
+          ],
+          "raw_logs": "Starting smoke-tests workflow for global-frontend-715\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Feature flag evaluation error at api/routes/route27.ts:58:70\nStack trace:\n  at build (/path/to/global-frontend-715/build.js:123:45)\n  at main (/path/to/global-frontend-715/main.js:67:89)\nCleaning up...\nWorkflow smoke-tests completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a authentication token expired related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

@@ -1,0 +1,76 @@
+{
+  "run_id": 100010,
+  "query": "load balancer health check",
+  "context": {
+    "target_run": 100010,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_549311",
+        "similarity": 0.8687982067792916,
+        "metadata": {
+          "run_id": 549311,
+          "repo": "ai-frontend-698",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "ci",
+          "commit": "e82277e",
+          "timestamp": "2024-07-18T20:10:49.750678",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "TypeError: Cannot read property in",
+              "context": "TypeError: Cannot read property in function 'handle_response'"
+            }
+          ],
+          "raw_logs": "Starting ci workflow for ai-frontend-698\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: TypeError: Cannot read property in function 'handle_response'\nStack trace:\n  at build (/path/to/ai-frontend-698/build.js:123:45)\n  at main (/path/to/ai-frontend-698/main.js:67:89)\nCleaning up...\nWorkflow ci completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_259490",
+        "similarity": 0.8687356462596172,
+        "metadata": {
+          "run_id": 259490,
+          "repo": "corp-frontend-394",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "e2e-tests",
+          "commit": "06184e9",
+          "timestamp": "2025-02-26T20:10:49.939767",
+          "error_patterns": [
+            {
+              "keyword": "test",
+              "line": "FAIL src/components/Header.test.js Exit code: 128",
+              "context": "FAIL src/components/Header.test.js Exit code: 128"
+            }
+          ],
+          "raw_logs": "Starting e2e-tests workflow for corp-frontend-394\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: FAIL src/components/Header.test.js Exit code: 128\nStack trace:\n  at build (/path/to/corp-frontend-394/build.js:123:45)\n  at main (/path/to/corp-frontend-394/main.js:67:89)\nCleaning up...\nWorkflow e2e-tests completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_410370",
+        "similarity": 0.8687356462596172,
+        "metadata": {
+          "run_id": 410370,
+          "repo": "corp-api-629",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "docker-build",
+          "commit": "0540d2c",
+          "timestamp": "2024-06-30T20:10:50.181073",
+          "error_patterns": [
+            {
+              "keyword": "integration",
+              "line": "Disk space insufficient while processing",
+              "context": "Disk space insufficient while processing database query"
+            }
+          ],
+          "raw_logs": "Starting docker-build workflow for corp-api-629\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Disk space insufficient while processing database query\nStack trace:\n  at build (/path/to/corp-api-629/build.js:123:45)\n  at main (/path/to/corp-api-629/main.js:67:89)\nCleaning up...\nWorkflow docker-build completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a load balancer health check related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

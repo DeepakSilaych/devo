@@ -1,0 +1,76 @@
+{
+  "run_id": 100007,
+  "query": "test suite failed",
+  "context": {
+    "target_run": 100007,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_453777",
+        "similarity": 0.5904220197462197,
+        "metadata": {
+          "run_id": 453777,
+          "repo": "cloud-core-384",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "regression",
+          "commit": "013caad",
+          "timestamp": "2025-02-18T20:10:50.031315",
+          "error_patterns": [
+            {
+              "keyword": "test",
+              "line": "TypeError: Cannot read property at",
+              "context": "TypeError: Cannot read property at config/env/config20.rs:603:86"
+            }
+          ],
+          "raw_logs": "Starting regression workflow for cloud-core-384\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: TypeError: Cannot read property at config/env/config20.rs:603:86\nStack trace:\n  at build (/path/to/cloud-core-384/build.js:123:45)\n  at main (/path/to/cloud-core-384/main.js:67:89)\nCleaning up...\nWorkflow regression completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_201184",
+        "similarity": 0.5871644848581153,
+        "metadata": {
+          "run_id": 201184,
+          "repo": "tech-utils-789",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "smoke-tests",
+          "commit": "199ed96",
+          "timestamp": "2025-03-22T20:10:50.064295",
+          "error_patterns": [
+            {
+              "keyword": "test",
+              "line": "Connection pool depleted while processing",
+              "context": "Connection pool depleted while processing API call"
+            }
+          ],
+          "raw_logs": "Starting smoke-tests workflow for tech-utils-789\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Connection pool depleted while processing API call\nStack trace:\n  at build (/path/to/tech-utils-789/build.js:123:45)\n  at main (/path/to/tech-utils-789/main.js:67:89)\nCleaning up...\nWorkflow smoke-tests completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_751487",
+        "similarity": 0.5867218406633207,
+        "metadata": {
+          "run_id": 751487,
+          "repo": "corp-service-428",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "vulnerability-scan",
+          "commit": "16e5f41",
+          "timestamp": "2024-12-01T20:10:50.244753",
+          "error_patterns": [
+            {
+              "keyword": "deploy",
+              "line": "Backup verification failed Exit code:",
+              "context": "Backup verification failed Exit code: 130"
+            }
+          ],
+          "raw_logs": "Starting vulnerability-scan workflow for corp-service-428\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Backup verification failed Exit code: 130\nStack trace:\n  at build (/path/to/corp-service-428/build.js:123:45)\n  at main (/path/to/corp-service-428/main.js:67:89)\nCleaning up...\nWorkflow vulnerability-scan completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a test suite failed related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

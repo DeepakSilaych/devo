@@ -1,0 +1,124 @@
+{
+  "total_failures": 5000,
+  "unique_repos": 26,
+  "unique_workflows": 14,
+  "unique_error_types": 8,
+  "top_failing_repos": [
+    [
+      "uber/react-native",
+      212
+    ],
+    [
+      "mysql/mysql-server",
+      211
+    ],
+    [
+      "django/django",
+      208
+    ],
+    [
+      "spring-projects/spring-boot",
+      206
+    ],
+    [
+      "docker/docker",
+      206
+    ],
+    [
+      "nodejs/node",
+      204
+    ],
+    [
+      "dropbox/zxcvbn",
+      204
+    ],
+    [
+      "mongodb/mongo",
+      203
+    ],
+    [
+      "netflix/zuul",
+      198
+    ],
+    [
+      "laravel/laravel",
+      197
+    ]
+  ],
+  "top_failing_workflows": [
+    [
+      "Docker Build",
+      385
+    ],
+    [
+      "CI",
+      383
+    ],
+    [
+      "Build",
+      377
+    ],
+    [
+      "E2E Tests",
+      376
+    ],
+    [
+      "Azure Deploy",
+      363
+    ],
+    [
+      "Security Scan",
+      360
+    ],
+    [
+      "Code Quality",
+      354
+    ],
+    [
+      "Deploy",
+      352
+    ],
+    [
+      "Kubernetes Deploy",
+      351
+    ],
+    [
+      "Performance Tests",
+      348
+    ]
+  ],
+  "top_error_patterns": [
+    [
+      "database",
+      1684
+    ],
+    [
+      "test failed",
+      1668
+    ],
+    [
+      "build failed",
+      1620
+    ],
+    [
+      "aws",
+      1582
+    ],
+    [
+      "kubernetes",
+      1551
+    ],
+    [
+      "security",
+      1531
+    ],
+    [
+      "npm err",
+      1503
+    ],
+    [
+      "docker",
+      1450
+    ]
+  ]
+}

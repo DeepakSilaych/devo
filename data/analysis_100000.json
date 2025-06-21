@@ -1,0 +1,76 @@
+{
+  "run_id": 100000,
+  "query": "analyze failure",
+  "context": {
+    "target_run": 100000,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_424525",
+        "similarity": 0.45460966505478534,
+        "metadata": {
+          "run_id": 424525,
+          "repo": "corp-platform-997",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "backup",
+          "commit": "ac5e156",
+          "timestamp": "2024-09-10T20:10:50.700824",
+          "error_patterns": [
+            {
+              "keyword": "test",
+              "line": "FileNotFoundError: No such file in",
+              "context": "FileNotFoundError: No such file in function 'handle_response'"
+            }
+          ],
+          "raw_logs": "Starting backup workflow for corp-platform-997\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: FileNotFoundError: No such file in function 'handle_response'\nStack trace:\n  at build (/path/to/corp-platform-997/build.js:123:45)\n  at main (/path/to/corp-platform-997/main.js:67:89)\nCleaning up...\nWorkflow backup completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_448927",
+        "similarity": 0.44735787578478503,
+        "metadata": {
+          "run_id": 448927,
+          "repo": "dev-web-521",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "terraform-apply",
+          "commit": "bd2b686",
+          "timestamp": "2025-03-04T20:10:50.361551",
+          "error_patterns": [
+            {
+              "keyword": "security",
+              "line": "RuntimeError: CUDA out of memory",
+              "context": "RuntimeError: CUDA out of memory Exit code: 1"
+            }
+          ],
+          "raw_logs": "Starting terraform-apply workflow for dev-web-521\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: RuntimeError: CUDA out of memory Exit code: 1\nStack trace:\n  at build (/path/to/dev-web-521/build.js:123:45)\n  at main (/path/to/dev-web-521/main.js:67:89)\nCleaning up...\nWorkflow terraform-apply completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_539306",
+        "similarity": 0.44638062380248944,
+        "metadata": {
+          "run_id": 539306,
+          "repo": "global-mobile-254",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "terraform-apply",
+          "commit": "d9d6ffb",
+          "timestamp": "2025-03-20T20:10:50.395071",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "AttributeError: module has no attribute",
+              "context": "AttributeError: module has no attribute Exit code: 130"
+            }
+          ],
+          "raw_logs": "Starting terraform-apply workflow for global-mobile-254\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: AttributeError: module has no attribute Exit code: 130\nStack trace:\n  at build (/path/to/global-mobile-254/build.js:123:45)\n  at main (/path/to/global-mobile-254/main.js:67:89)\nCleaning up...\nWorkflow terraform-apply completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a analyze failure related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}

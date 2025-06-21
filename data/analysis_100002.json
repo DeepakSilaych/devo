@@ -1,0 +1,76 @@
+{
+  "run_id": 100002,
+  "query": "docker deployment error",
+  "context": {
+    "target_run": 100002,
+    "graph_similar": [],
+    "vector_similar": [
+      {
+        "doc_id": "run_611894",
+        "similarity": 0.5500979438865083,
+        "metadata": {
+          "run_id": 611894,
+          "repo": "secure-engine-337",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "dependency-check",
+          "commit": "176a060",
+          "timestamp": "2024-06-30T20:10:50.878762",
+          "error_patterns": [
+            {
+              "keyword": "performance",
+              "line": "MongoDB authentication failed at test/unit/test_97.jsx:622:27",
+              "context": "MongoDB authentication failed at test/unit/test_97.jsx:622:27"
+            }
+          ],
+          "raw_logs": "Starting dependency-check workflow for secure-engine-337\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: MongoDB authentication failed at test/unit/test_97.jsx:622:27\nStack trace:\n  at build (/path/to/secure-engine-337/build.js:123:45)\n  at main (/path/to/secure-engine-337/main.js:67:89)\nCleaning up...\nWorkflow dependency-check completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_402737",
+        "similarity": 0.4828210871310552,
+        "metadata": {
+          "run_id": 402737,
+          "repo": "data-engine-708",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "test",
+          "commit": "201ad76",
+          "timestamp": "2024-07-27T20:10:49.842709",
+          "error_patterns": [
+            {
+              "keyword": "integration",
+              "line": "Load balancer health check failed",
+              "context": "Load balancer health check failed while processing database query"
+            }
+          ],
+          "raw_logs": "Starting test workflow for data-engine-708\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Load balancer health check failed while processing database query\nStack trace:\n  at build (/path/to/data-engine-708/build.js:123:45)\n  at main (/path/to/data-engine-708/main.js:67:89)\nCleaning up...\nWorkflow test completed with errors"
+        }
+      },
+      {
+        "doc_id": "run_225777",
+        "similarity": 0.4828210871310552,
+        "metadata": {
+          "run_id": 225777,
+          "repo": "secure-mobile-630",
+          "status": "completed",
+          "conclusion": "failure",
+          "workflow": "lint",
+          "commit": "ee42159",
+          "timestamp": "2024-08-13T20:10:50.504805",
+          "error_patterns": [
+            {
+              "keyword": "build",
+              "line": "Multi-factor authentication bypass at config/env/config9.rs:100:76",
+              "context": "Multi-factor authentication bypass at config/env/config9.rs:100:76"
+            }
+          ],
+          "raw_logs": "Starting lint workflow for secure-mobile-630\nInstalling dependencies...\nRunning build process...\nExecuting tests...\nERROR: Multi-factor authentication bypass at config/env/config9.rs:100:76\nStack trace:\n  at build (/path/to/secure-mobile-630/build.js:123:45)\n  at main (/path/to/secure-mobile-630/main.js:67:89)\nCleaning up...\nWorkflow lint completed with errors"
+        }
+      }
+    ],
+    "failure_path": []
+  },
+  "diagnosis": "Mock diagnosis: Based on the error patterns and similar failures, this appears to be a docker deployment error related issue. Common causes include dependency conflicts, build configuration errors, or environment setup problems.",
+  "recommendations": []
+}
